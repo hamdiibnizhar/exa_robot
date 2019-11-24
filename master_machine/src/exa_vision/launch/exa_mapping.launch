@@ -1,0 +1,12 @@
+<launch>
+	<group ns="rtabmap">
+	<node pkg="rtabmap_ros" type="rgbd_odometry" name="rgbd_odometry">
+		<param name="Odom/ResetCountdown" value="1"/>
+	</node>
+	<node pkg="rtabmap_ros" type="rtabmap" name="rtabmap">
+		<param name="Rtabmap/StartNewMapOnLoopClosure" value="true"/>
+	</node>
+	<!--node respawn="true" pkg="exa_vision" type="exa_geiger_subscriber" name="exa_geiger_subscriber"/-->
+	<!--node respawn="true" pkg="exa_vision" type="exa_geiger_map" name="exa_geiger_map"/-->
+	</group>
+</launch>

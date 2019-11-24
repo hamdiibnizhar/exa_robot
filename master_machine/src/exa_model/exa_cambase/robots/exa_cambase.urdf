@@ -1,0 +1,721 @@
+<robot
+  name="exa_cambase">
+  <link
+    name="base">
+    <inertial>
+      <origin
+        xyz="0.0099032 -3.9625E-09 -0.053423"
+        rpy="0 0 0" />
+      <mass
+        value="0.96" />
+      <inertia
+        ixx="0.0063903"
+        ixy="2.0228E-10"
+        ixz="-0.00067347"
+        iyy="0.010388"
+        iyz="3.5225E-10"
+        izz="0.012125" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_cambase/meshes/base.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_cambase/meshes/base.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="mlink1">
+    <inertial>
+      <origin
+        xyz="-0.06527 0.10431 0.10694"
+        rpy="0 0 0" />
+      <mass
+        value="2.1964" />
+      <inertia
+        ixx="0.040348"
+        ixy="0.0006216"
+        ixz="-0.014099"
+        iyy="0.055662"
+        iyz="-2.2821E-05"
+        izz="0.037292" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_cambase/meshes/mlink1.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_cambase/meshes/mlink1.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="mjoint1"
+    type="continuous">
+    <origin
+      xyz="0.10805 -0.104 -0.103"
+      rpy="0 0 0" />
+    <parent
+      link="base" />
+    <child
+      link="mlink1" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      effort="100"
+      velocity="50" />
+  </joint>
+  <link
+    name="mlink2">
+    <inertial>
+      <origin
+        xyz="-0.06527 -0.10369 0.10694"
+        rpy="0 0 0" />
+      <mass
+        value="2.1964" />
+      <inertia
+        ixx="0.040348"
+        ixy="0.0006216"
+        ixz="-0.014099"
+        iyy="0.055662"
+        iyz="-2.2821E-05"
+        izz="0.037292" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_cambase/meshes/mlink2.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_cambase/meshes/mlink2.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="mjoint2"
+    type="continuous">
+    <origin
+      xyz="0.10805 0.104 -0.103"
+      rpy="0 -2.9721E-58 8.5125E-44" />
+    <parent
+      link="base" />
+    <child
+      link="mlink2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="100"
+      velocity="50" />
+  </joint>
+  <link
+    name="mlink3">
+    <inertial>
+      <origin
+        xyz="0.14873 0.10431 0.10694"
+        rpy="0 0 0" />
+      <mass
+        value="2.1964" />
+      <inertia
+        ixx="0.040348"
+        ixy="0.0006216"
+        ixz="-0.014099"
+        iyy="0.055662"
+        iyz="-2.2821E-05"
+        izz="0.037292" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_cambase/meshes/mlink3.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_cambase/meshes/mlink3.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="mjoint3"
+    type="continuous">
+    <origin
+      xyz="-0.10595 -0.104 -0.103"
+      rpy="0 0 0" />
+    <parent
+      link="base" />
+    <child
+      link="mlink3" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      effort="100"
+      velocity="50" />
+  </joint>
+  <link
+    name="mlink4">
+    <inertial>
+      <origin
+        xyz="0.14873 -0.10369 0.10694"
+        rpy="0 0 0" />
+      <mass
+        value="2.1964" />
+      <inertia
+        ixx="0.040348"
+        ixy="0.0006216"
+        ixz="-0.014099"
+        iyy="0.055662"
+        iyz="-2.2821E-05"
+        izz="0.037292" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_cambase/meshes/mlink4.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_cambase/meshes/mlink4.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="mjoint4"
+    type="continuous">
+    <origin
+      xyz="-0.10595 0.104 -0.103"
+      rpy="0 -2.9721E-58 8.5125E-44" />
+    <parent
+      link="base" />
+    <child
+      link="mlink4" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="100"
+      velocity="50" />
+  </joint>
+  <link
+    name="alink1">
+    <inertial>
+      <origin
+        xyz="-0.0032701 0.00030673 -0.037184"
+        rpy="0 0 0" />
+      <mass
+        value="2.1964" />
+      <inertia
+        ixx="0.040348"
+        ixy="0.0006216"
+        ixz="-0.014099"
+        iyy="0.055662"
+        iyz="-2.2821E-05"
+        izz="0.037292" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_cambase/meshes/alink1.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_cambase/meshes/alink1.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ajoint1"
+    type="revolute">
+    <origin
+      xyz="0.046046 0 0.041125"
+      rpy="0 -2.9721E-58 8.5125E-44" />
+    <parent
+      link="base" />
+    <child
+      link="alink1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0.33"
+      velocity="4.986" />
+  </joint>
+  <link
+    name="alink2">
+    <inertial>
+      <origin
+        xyz="-0.01877 0.029297 -0.066184"
+        rpy="0 0 0" />
+      <mass
+        value="2.1964" />
+      <inertia
+        ixx="0.040348"
+        ixy="0.0006216"
+        ixz="-0.014099"
+        iyy="0.055662"
+        iyz="-2.2821E-05"
+        izz="0.037292" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_cambase/meshes/alink2.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_cambase/meshes/alink2.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ajoint2"
+    type="revolute">
+    <origin
+      xyz="0.0155 -0.02899 0.029"
+      rpy="0 0 -8.5125E-44" />
+    <parent
+      link="alink1" />
+    <child
+      link="alink2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.4363"
+      effort="1.1"
+      velocity="3.74" />
+  </joint>
+  <link
+    name="alink3">
+    <inertial>
+      <origin
+        xyz="0.059507 0.0018825 -0.16581"
+        rpy="0 0 0" />
+      <mass
+        value="2.1964" />
+      <inertia
+        ixx="0.040348"
+        ixy="0.0006216"
+        ixz="-0.014099"
+        iyy="0.055662"
+        iyz="-2.2821E-05"
+        izz="0.037292" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_cambase/meshes/alink3.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_cambase/meshes/alink3.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ajoint3"
+    type="revolute">
+    <origin
+      xyz="-0.078277 0.027414 0.099623"
+      rpy="0 0 0" />
+    <parent
+      link="alink2" />
+    <child
+      link="alink3" />
+    <axis
+      xyz="0.64279 0 0.76604" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0.77"
+      velocity="4.363" />
+  </joint>
+  <link
+    name="alink4">
+    <inertial>
+      <origin
+        xyz="0.071203 -0.014084 -0.1485"
+        rpy="0 0 0" />
+      <mass
+        value="2.1964" />
+      <inertia
+        ixx="0.040348"
+        ixy="0.0006216"
+        ixz="-0.014099"
+        iyy="0.055662"
+        iyz="-2.2821E-05"
+        izz="0.037292" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_cambase/meshes/alink4.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_cambase/meshes/alink4.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ajoint4"
+    type="revolute">
+    <origin
+      xyz="-0.011696 0.015967 -0.017312"
+      rpy="0 0 0" />
+    <parent
+      link="alink3" />
+    <child
+      link="alink4" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="3.1416"
+      effort="0.77"
+      velocity="4.363" />
+  </joint>
+  <link
+    name="alink5">
+    <inertial>
+      <origin
+        xyz="-0.020438 -0.017084 -0.25692"
+        rpy="0 0 0" />
+      <mass
+        value="2.1964" />
+      <inertia
+        ixx="0.040348"
+        ixy="0.0006216"
+        ixz="-0.014099"
+        iyy="0.055662"
+        iyz="-2.2821E-05"
+        izz="0.037292" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_cambase/meshes/alink5.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_cambase/meshes/alink5.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ajoint5"
+    type="revolute">
+    <origin
+      xyz="0.091641 0.003 0.10842"
+      rpy="0 0 0" />
+    <parent
+      link="alink4" />
+    <child
+      link="alink5" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="3.1416"
+      effort="0.32"
+      velocity="4.55" />
+  </joint>
+  <link
+    name="alink6">
+    <inertial>
+      <origin
+        xyz="-0.070997 -0.0060845 -0.21449"
+        rpy="0 0 0" />
+      <mass
+        value="2.1964" />
+      <inertia
+        ixx="0.040348"
+        ixy="0.0006216"
+        ixz="-0.014099"
+        iyy="0.055662"
+        iyz="-2.2821E-05"
+        izz="0.037292" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_cambase/meshes/alink6.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_cambase/meshes/alink6.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ajoint6"
+    type="revolute">
+    <origin
+      xyz="0.050559 -0.011 -0.042424"
+      rpy="0 0 0" />
+    <parent
+      link="alink5" />
+    <child
+      link="alink6" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.8726"
+      upper="2.2689"
+      effort="0.32"
+      velocity="4.55" />
+  </joint>
+  <link
+    name="clink1">
+    <inertial>
+      <origin
+        xyz="-0.022452 0.011249 2.0047E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.036327" />
+      <inertia
+        ixx="1.1514E-05"
+        ixy="1.7293E-07"
+        ixz="2.1921E-13"
+        iyy="4.7507E-06"
+        iyz="2.7421E-13"
+        izz="1.3424E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_cambase/meshes/clink1.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_cambase/meshes/clink1.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="cjoint1"
+    type="fixed">
+    <origin
+      xyz="0.17005 -0.056 0.026"
+      rpy="0 -2.9721E-58 8.5125E-44" />
+    <parent
+      link="base" />
+    <child
+      link="clink1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="clink2">
+    <inertial>
+      <origin
+        xyz="-0.022452 0.011249 2.0047E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.036327" />
+      <inertia
+        ixx="1.1514E-05"
+        ixy="1.7293E-07"
+        ixz="2.1921E-13"
+        iyy="4.7507E-06"
+        iyz="2.7421E-13"
+        izz="1.3424E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_cambase/meshes/clink2.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_cambase/meshes/clink2.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="cjoint2"
+    type="fixed">
+    <origin
+      xyz="0.17005 0.033 0.026"
+      rpy="0 -2.9721E-58 8.5125E-44" />
+    <parent
+      link="base" />
+    <child
+      link="clink2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

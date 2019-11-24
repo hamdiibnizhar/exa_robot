@@ -1,0 +1,6 @@
+<package>
+  <description brief="exa_cambase">exa_cambase</description>
+  <depend package="gazebo" />
+  <author>me</author>
+  <license>BSD</license>
+</package>

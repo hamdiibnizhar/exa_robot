@@ -1,0 +1,155 @@
+#!/bin/bash
+
+workspace_project() {
+	clear;
+	cd /home/$USER/final_project/exa_robot/src;
+}
+
+if [ -z "$1" ]; then
+        echo Null first parameter;
+        echo give the command first parameter;
+else 
+	echo $1;
+fi
+
+if [ "$1" = "launch" ]; then
+	
+		if [ -z "$2" ]; then
+                echo null second parameter;
+                echo give the second parameter;
+		else
+			echo $2;
+			source ~/final_project/exa_robot/devel/setup.bash;
+        fi
+
+        if [ "$2" = "openni" ]; then
+                roslaunch openni_launch openni.launch depth_registration:=true;
+        elif [ "$2" = "freenect" ]; then
+                roslaunch freenect_launch freenect.launch depth_registration:=true;
+        elif [ "$2" = "controller" ]; then
+                cd ~/final_project/exa_robot/src/exa_control/launch;
+                roslaunch exa_controller.launch;
+        elif [ "$2" = "data" ]; then
+                cd ~/final_project/exa_robot/src/exa_vision/launch;
+                roslaunch exa_mapping.launch;
+        elif [ "$2" = "mapping" ]; then
+                cd ~/final_project/exa_robot/src/exa_vision/launch;
+				#cd ~/final_project/exa_robot/src/rtabmap_ros/launch;
+				#roslaunch rtabmap_ros exa_rtabmap_config.launch
+				#roslaunch rtabmap_ros rtabmap.launch rgbd_topic:=/camera/rgbd_image compressed:=true rtabmap_args:="--delete_db_on_start"
+				#roslaunch rtabmap_ros rtabmap.launch rtabmap_args:="--delete_db_on_start" user_data_async_topic:=/wifi_signal rtabmapviz:=true rviz:=true
+				#roslaunch rtabmap_ros rtabmap.launch rgbd_topic:=/camera/rgbd_image compressed:=true rtabmap_args:="--delete_db_on_start" user_data_async_topic:=/exa_robot/geiger_data rtabmapviz:=false rviz:=true Rtabmap/StartNewMapOnLoopClosure:=true Odom/ResetCountdown:=1
+				roslaunch rtabmap_ros rtabmap.launch rgbd_topic:=/camera/rgbd_image compressed:=true rtabmap_args:="--delete_db_on_start" user_data_async_topic:=/exa_robot/geiger_data rtabmapviz:=false rviz:=true
+		elif [ "$2" = "all" ]; then
+                source ./exascript;
+
+		else 
+			echo the second parameter is not listed;
+        fi
+
+elif [ "$1" = "run" ]; then
+	
+		if [ -z "$2" ]; then
+                echo null second parameter;
+                echo give the second parameter;
+        else
+                echo $2;
+                source ~/final_project/exa_robot/devel/setup.bash;
+        fi
+
+        if [ "$2" = "rviz" ]; then
+                rosrun rviz rviz;
+		elif [ "$2" = "setting" ]; then
+                rosrun rqt_reconfigure rqt_reconfigure;
+		elif [ "$2" = "openni" ]; then
+                roslaunch openni_launch openni.launch;
+		elif [ "$2" = "freenect" ]; then
+	            roslaunch freenect_launch freenect.launch;
+
+        else 
+                echo the second parameter is not listed;
+        fi
+elif [ "$1" = "retrieve" ]; then
+	
+		if [ -z "$2" ]; then
+                echo null second parameter;
+                echo give the second parameter;
+		fi
+		if [ "$2" = "geiger" ]; then
+	            rosrun exa_vision exa_geiger_subscriber;
+		elif [ "$2" = "map" ]; then
+	            rosrun exa_vision exa_geiger_map;
+		fi
+
+elif [ "$1" = "reset" ]; then
+	
+		if [ -z "$2" ]; then
+                echo null second parameter;
+                echo give the second parameter;
+        else
+                echo $2;
+                source ~/final_project/exa_robot/devel/setup.bash;
+        fi
+
+        if [ "$2" = "mapping" ]; then
+                rosservice call /rtabmap/reset;
+		elif [ "$2" = "localization" ]; then
+                rosservice call /rtabmap/reset_odom;
+		
+        else 
+                echo the second parameter is not listed;
+        fi
+
+elif [ "$1" = "view" ]; then
+	
+		if [ -z "$2" ]; then
+                echo null second parameter;
+                echo give the second parameter;
+        else
+                echo $2;
+                source ~/final_project/exa_robot/devel/setup.bash;
+        fi
+
+        if [ "$2" = "joy" ]; then
+                rostopic echo joy;
+		elif [ "$2" = "velocity" ]; then
+                rostopic echo exa_robot/cmd_vel;
+		elif [ "$2" = "image" ]; then
+                rosrun image_view image_view image:=/camera/rgb/image_color;
+		elif [ "$2" = "depth" ]; then
+                rosrun image_view image_view image:=/camera/depth/image;
+		elif [ "$2" = "disparity" ]; then
+                rosrun image_view disparity_view image:=/camera/depth/disparity;
+		elif [ "$2" = "cps" ]; then
+                rostopic echo exa_robot/geiger_sensor_cps;
+		elif [ "$2" = "cpm" ]; then
+                rostopic echo exa_robot/geiger_sensor_cpm;	
+
+        else 
+                echo the second parameter is not listed;
+        fi
+
+
+elif [ "$1" = "refresh" ]; then
+        source ~/final_project/exa_robot/devel/setup.bash;
+elif [ "$1" = "kill" ]; then
+        killall -9 roscore;
+        killall -9 rosmaster;
+	echo ========= exa robot killed =========
+elif [ "$1" = "ssh" ]; then
+	ssh -X exa@192.168.0.102;
+elif [ "$1" = "workspace" ]; then
+	export -f workspace_project;
+       	bash -c 'workspace_project; bash'
+
+else 
+	echo the first parameter is not listed;
+fi
+
+#TEMPLATE
+: '
+elif [ "$" = "" ]; then
+                ;
+
+'
+

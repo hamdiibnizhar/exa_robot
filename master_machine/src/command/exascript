@@ -1,0 +1,28 @@
+#cd ~/final_project/exa_robot/src/exa_control/launch;
+# Define function.
+
+exa_controller() {
+    cd ~/final_project/exa_robot/src/exa_control/launch;
+    roslaunch exa_controller.launch;
+}
+
+mapping() {
+    cd ~/final_project/exa_robot/src/rtabmap_ros/launch;
+	roslaunch rtabmap_ros exa_rtabmap_config.launch
+}
+
+# Export it, so that all child `bash` processes see it.
+export -f exa_controller
+export -f mapping
+
+# Invoke gnome-terminal with `bash -c` and the function name, *plus*
+# another bash instance to keep the window open.
+# NOTE: This is required, because `-c` invariably exits after
+#       running the specified command.
+#       CAVEAT: The bash instance that stays open will be a *child* process of the
+#       one that executed the function - and will thus not have access to any
+#       non-exported definitions from it.
+gnome-terminal -x bash -c 'roscore; bash'
+sleep 1
+gnome-terminal -x bash -c 'exa_controller; bash'
+gnome-terminal -x bash -c 'mapping; bash'

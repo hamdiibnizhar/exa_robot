@@ -1,0 +1,616 @@
+<?xml version="1.0" ?>
+<robot
+  name="exa_robot16">
+  <link
+    name="base">
+    <inertial>
+      <origin
+        xyz="0.038421 0.0003776 0.0090828"
+        rpy="0 0 0" />
+      <mass
+        value="1.9269" />
+      <inertia
+        ixx="0.036287"
+        ixy="0.00061599"
+        ixz="-0.013209"
+        iyy="0.050613"
+        iyz="-2.4823E-05"
+        izz="0.032024" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_robot16/meshes/base.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_robot16/meshes/base.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="motor1">
+    <inertial>
+      <origin
+        xyz="-0.06967 0.10436 0.11208"
+        rpy="0 0 0" />
+      <mass
+        value="1.9269" />
+      <inertia
+        ixx="0.036287"
+        ixy="0.00061599"
+        ixz="-0.013209"
+        iyy="0.050613"
+        iyz="-2.4823E-05"
+        izz="0.032024" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_robot16/meshes/motor1.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_robot16/meshes/motor1.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pjoint1"
+    type="continuous">
+    <origin
+      xyz="0.10809 -0.10398 -0.103"
+      rpy="0 0 0" />
+    <parent
+      link="base" />
+    <child
+      link="motor1" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="motor2">
+    <inertial>
+      <origin
+        xyz="-0.06967 -0.10364 0.11208"
+        rpy="0 0 0" />
+      <mass
+        value="1.9269" />
+      <inertia
+        ixx="0.036287"
+        ixy="0.00061599"
+        ixz="-0.013209"
+        iyy="0.050613"
+        iyz="-2.4823E-05"
+        izz="0.032024" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_robot16/meshes/motor2.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_robot16/meshes/motor2.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pjoint2"
+    type="continuous">
+    <origin
+      xyz="0.10809 0.10402 -0.103"
+      rpy="0 -2.9721E-58 8.5125E-44" />
+    <parent
+      link="base" />
+    <child
+      link="motor2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="motor3">
+    <inertial>
+      <origin
+        xyz="0.14433 0.10436 0.11208"
+        rpy="0 0 0" />
+      <mass
+        value="1.9269" />
+      <inertia
+        ixx="0.036287"
+        ixy="0.00061599"
+        ixz="-0.013209"
+        iyy="0.050613"
+        iyz="-2.4823E-05"
+        izz="0.032024" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_robot16/meshes/motor3.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_robot16/meshes/motor3.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pjoint3"
+    type="continuous">
+    <origin
+      xyz="-0.10591 -0.10398 -0.103"
+      rpy="0 0 0" />
+    <parent
+      link="base" />
+    <child
+      link="motor3" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="motor4">
+    <inertial>
+      <origin
+        xyz="0.14433 -0.10364 0.11208"
+        rpy="0 0 0" />
+      <mass
+        value="1.9269" />
+      <inertia
+        ixx="0.036287"
+        ixy="0.00061599"
+        ixz="-0.013209"
+        iyy="0.050613"
+        iyz="-2.4823E-05"
+        izz="0.032024" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_robot16/meshes/motor4.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_robot16/meshes/motor4.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pjoint4"
+    type="continuous">
+    <origin
+      xyz="-0.10591 0.10402 -0.103"
+      rpy="0 0 0" />
+    <parent
+      link="base" />
+    <child
+      link="motor4" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="-0.0076705 0.00036066 -0.041042"
+        rpy="0 0 0" />
+      <mass
+        value="1.9269" />
+      <inertia
+        ixx="0.036287"
+        ixy="0.00061599"
+        ixz="-0.013209"
+        iyy="0.050613"
+        iyz="-2.4823E-05"
+        izz="0.032024" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_robot16/meshes/link1.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_robot16/meshes/link1.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="revolute">
+    <origin
+      xyz="0.046091 1.6943E-05 0.050125"
+      rpy="0 -2.9721E-58 8.5125E-44" />
+    <parent
+      link="base" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0.33"
+      velocity="4.96" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="-0.02317 0.029351 -0.061042"
+        rpy="0 0 0" />
+      <mass
+        value="1.9269" />
+      <inertia
+        ixx="0.036287"
+        ixy="0.00061599"
+        ixz="-0.013209"
+        iyy="0.050613"
+        iyz="-2.4823E-05"
+        izz="0.032024" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_robot16/meshes/link2.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_robot16/meshes/link2.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="revolute">
+    <origin
+      xyz="0.0155 -0.02899 0.02"
+      rpy="0 0 -8.5125E-44" />
+    <parent
+      link="link1" />
+    <child
+      link="link2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="2.44"
+      effort="1.1"
+      velocity="374" />
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="0.057035 0.0019364 -0.15837"
+        rpy="0 0 0" />
+      <mass
+        value="1.9269" />
+      <inertia
+        ixx="0.036287"
+        ixy="0.00061599"
+        ixz="-0.013209"
+        iyy="0.050613"
+        iyz="-2.4823E-05"
+        izz="0.032024" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_robot16/meshes/link3.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_robot16/meshes/link3.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="revolute">
+    <origin
+      xyz="-0.080205 0.027414 0.097325"
+      rpy="0 -2.9721E-58 8.5125E-44" />
+    <parent
+      link="link2" />
+    <child
+      link="link3" />
+    <axis
+      xyz="-0.64279 0 -0.76604" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0.77"
+      velocity="4.363" />
+  </joint>
+  <link
+    name="link4">
+    <inertial>
+      <origin
+        xyz="0.066803 -0.014031 -0.14335"
+        rpy="0 0 0" />
+      <mass
+        value="1.9269" />
+      <inertia
+        ixx="0.036287"
+        ixy="0.00061599"
+        ixz="-0.013209"
+        iyy="0.050613"
+        iyz="-2.4823E-05"
+        izz="0.032024" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_robot16/meshes/link4.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_robot16/meshes/link4.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint4"
+    type="revolute">
+    <origin
+      xyz="-0.0097677 0.015967 -0.015013"
+      rpy="0 0 -8.5125E-44" />
+    <parent
+      link="link3" />
+    <child
+      link="link4" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0.77"
+      velocity="4.363" />
+  </joint>
+  <link
+    name="link5">
+    <inertial>
+      <origin
+        xyz="-0.025731 -0.017031 -0.25102"
+        rpy="0 0 0" />
+      <mass
+        value="1.9269" />
+      <inertia
+        ixx="0.036287"
+        ixy="0.00061599"
+        ixz="-0.013209"
+        iyy="0.050613"
+        iyz="-2.4823E-05"
+        izz="0.032024" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_robot16/meshes/link5.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_robot16/meshes/link5.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint5"
+    type="revolute">
+    <origin
+      xyz="0.092534 0.003 0.10766"
+      rpy="0 0 0" />
+    <parent
+      link="link4" />
+    <child
+      link="link5" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0.77"
+      velocity="4.363" />
+  </joint>
+  <link
+    name="link6">
+    <inertial>
+      <origin
+        xyz="-0.075938 -0.0060306 -0.20817"
+        rpy="0 0 0" />
+      <mass
+        value="1.9269" />
+      <inertia
+        ixx="0.036287"
+        ixy="0.00061599"
+        ixz="-0.013209"
+        iyy="0.050613"
+        iyz="-2.4823E-05"
+        izz="0.032024" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_robot16/meshes/link6.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exa_robot16/meshes/link6.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint6"
+    type="revolute">
+    <origin
+      xyz="0.050206 -0.011 -0.042841"
+      rpy="0 -2.9721E-58 8.5125E-44" />
+    <parent
+      link="link5" />
+    <child
+      link="link6" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0.77"
+      velocity="4.363" />
+  </joint>
+</robot>

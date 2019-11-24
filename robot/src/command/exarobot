@@ -1,0 +1,125 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+	echo null first parameter;
+	echo give the command first parameter;
+else 
+	echo $1;
+fi
+
+if [ "$1" = "launch" ]; then
+
+	if [ -z "$2" ]; then
+                echo null second parameter;
+                echo give the second parameter;
+	else 
+		echo $2;
+		source ~/Projects/final_project/exa_robot/devel/setup.bash;
+        fi
+
+	if [ "$2" = "openni" ]; then
+		#roslaunch openni_launch openni.launch depth_registration:=true;
+		cd ~/Projects/final_project/exa_robot/src/exa_vision/launch;
+		roslaunch openni_throttle.launch rate:=5 openni_depth_mode:=1
+	elif [ "$2" = "freenect" ]; then
+		#roslaunch freenect_launch freenect.launch depth_registration:=true;
+		cd ~/Projects/final_project/exa_robot/src/exa_vision/launch;
+		roslaunch freenect_throttle.launch rate:=5
+	elif [ "$2" = "control" ]; then
+		cd ~/Projects/final_project/exa_robot/src/exa_control/launch;
+                roslaunch exa_teleop.launch;
+	elif [ "$2" = "mapping" ]; then
+                cd ~/Projects/final_project/exa_robot/src/exa_vision/launch;
+                #roslaunch exa_teleop.launch;
+
+	else 
+                echo the second parameter is not listed;
+	fi
+
+elif [ "$1" = "run" ]; then
+	
+		if [ -z "$2" ]; then
+                echo null second parameter;
+                echo give the second parameter;
+        else
+                echo $2;
+                source ~/Projects/final_project/exa_robot/devel/setup.bash;
+        fi
+
+        if [ "$2" = "rviz" ]; then
+                rosrun rviz rviz;
+	elif [ "$2" = "setting" ]; then
+                rosrun rqt_reconfigure rqt_reconfigure;
+	elif [ "$2" = "openni" ]; then
+                roslaunch openni_launch openni.launch;
+	elif [ "$2" = "freenect" ]; then
+	            roslaunch freenect_launch freenect.launch;
+
+        else 
+                echo the second parameter is not listed;
+        fi
+
+elif [ "$1" = "reset" ]; then
+	
+	if [ -z "$2" ]; then
+                echo null second parameter;
+                echo give the second parameter;
+        else
+                echo $2;
+                source ~/Projects/final_project/exa_robot/devel/setup.bash;
+        fi
+
+        if [ "$2" = "mapping" ]; then
+                rosservice call /rtabmap/reset;
+		elif [ "$2" = "localization" ]; then
+                rosservice call /rtabmap/reset_odom;
+		
+        else 
+                echo the second parameter is not listed;
+        fi
+
+elif [ "$1" = "view" ]; then
+	
+	if [ -z "$2" ]; then
+                echo null second parameter;
+                echo give the second parameter;
+        else
+                echo $2;
+                source ~/Projects/final_project/exa_robot/devel/setup.bash;
+        fi
+
+        if [ "$2" = "joy" ]; then
+                rostopic echo joy;
+	elif [ "$2" = "velocity" ]; then
+                rostopic echo exa_robot/cmd_vel;
+	elif [ "$2" = "image" ]; then
+                rosrun image_view image_view image:=/camera/rgb/image_color;
+	elif [ "$2" = "depth" ]; then
+                rosrun image_view image_view image:=/camera/depth/image;
+	elif [ "$2" = "disparity" ]; then
+                rosrun image_view disparity_view image:=/camera/depth/disparity;
+	elif [ "$2" = "cps" ]; then
+                rostopic echo exa_robot/geiger_sensor_cps;
+	elif [ "$2" = "cpm" ]; then
+                rostopic echo exa_robot/geiger_sensor_cpm;	
+
+        else 
+                echo the second parameter is not listed;
+        fi
+
+elif [ "$1" = "refresh" ]; then
+	source ~/Projects/final_project/exa_robot/devel/setup.bash;
+elif [ "$1" = "kill" ]; then
+	killall -9 roscore;
+	killall -9 rosmaster;
+elif [ "$1" = "cd" ]; then
+	cd ~/Projects/final_project/exa_robot/src;
+	echo here
+elif [ "$1" = "shutdown" ]; then
+	sudo shutdown -h now;
+elif [ "$1" = "reboot" ]; then
+        sudo reboot now;
+
+else 
+        echo the first parameter is not listed;
+fi

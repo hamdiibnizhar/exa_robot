@@ -1,0 +1,3 @@
+#echo $PWD
+sudo rm -rf /usr/local/bin/exarobot
+sudo ln -s $PWD/exarobot /usr/local/bin/exarobot

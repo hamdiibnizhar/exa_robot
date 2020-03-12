@@ -1,8 +1,8 @@
-# exa_robot
+# exa robot
 
 Require :
 
- - ubuntu 16.04 Xenial
+ - ubuntu 16.04 Xenial Xerus
  - ROS Kinetic (full desktop config) and its dependency
  - OpenCV 3.4 and its dependency
  - PCL (1.7.2) and its dependency

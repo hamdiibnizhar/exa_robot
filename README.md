@@ -1,5 +1,4 @@
 # exa_robot
-# exa_robot #
 
 Require :
 
@@ -32,3 +31,9 @@ usage
 Result
 
 Localization and mapping nuclear spots in unknown room
+
+![Localization and mapping nuclear spots in unknown room](https://github.com/hamdiibnizhar/exa_robot/tree/master/master_machine/src/results/nuclear_sources_spots_localization_and_mapping.png)
+
+Background Radiation
+
+![](https://github.com/hamdiibnizhar/exa_robot/tree/master/master_machine/src/results/nuclear_background_spots_localization_and_mapping.png)
